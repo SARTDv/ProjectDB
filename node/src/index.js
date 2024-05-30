@@ -1,10 +1,10 @@
 const { Client } = require('pg');
 
 const client = new Client({
-  host: 'db', // El nombre del contenedor PostgreSQL
-  user: 'user',
-  password: 'password',
-  database: 'mydatabase',
+  host: 'postgres_db', // El nombre del contenedor PostgreSQL
+  user: 'admin',
+  password: '1234',
+  database: 'datos',
   port: 5432
 });
 
