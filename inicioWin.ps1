@@ -2,7 +2,7 @@
 docker build -t my_postgres ./db
 
 # Construir la imagen de Node.js
-docker build -t my_node_app ./node_app
+docker build -t my_node_app ./node
 
 # Ejecutar PostgreSQL
 docker run -d `
