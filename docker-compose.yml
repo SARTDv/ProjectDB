@@ -1,0 +1,28 @@
+services:
+  db:
+    build:
+      context: ./db
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: datos
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  node:
+    build:
+      context: ./node
+    container_name: node
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./node:/usr/src/app
+    depends_on:
+      - db
+
+volumes:
+  db_data:
