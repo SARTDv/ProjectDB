@@ -10,7 +10,7 @@ docker run -d `
   -e POSTGRES_USER=admin `
   -e POSTGRES_PASSWORD=1234 `
   -e POSTGRES_DB=datos `
-  -v dbdata:/var/lib/postgresql/data `
+  -v db_data:/var/lib/postgresql/data `
   -v ${PWD}/db/init.sql:/docker-entrypoint-initdb.d/init.sql `
   -p 5432:5432 `
   my_postgres
